@@ -9,7 +9,11 @@
                 <div class="float-right">
                     <div class="our-link">
                         <ul>
-                            <li><a href="#"><i class="fas fa-headset mr-2"></i> Contact Us</a></li>
+                            <li class="nav-item"><a class="nav-link" href="about.html">Contact Us</a></li>
+                            <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                            <li class="nav-item"><a class="nav-link" href="about.html">Blogs</a></li>
+
+
                             <li>
                                 <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
                                     @if (Route::has('login'))
@@ -48,7 +52,7 @@
             </button>
                 <a class="navbar-brand" href="{{route('index')}}">
                     <img src="images/main-logo.png" class="logo" style="height:80px; width:auto;">
-                    <span style="color: #888d04; font-weight:bold">AGRO</span>
+                    <span style="color: #44803F; font-weight:bold">AGRO</span>
                 </a>
             </div>
             <!-- End Header Navigation -->
@@ -57,20 +61,21 @@
             <div class="collapse navbar-collapse" id="navbar-menu">
                 <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
                     <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="index.html">Seed</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="index.html">Fertilizer</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="index.html">Pesticide Product</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="index.html">Kitchen Garden</a></li>
                     <li class="dropdown">
-                        <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
+                        <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown"> Shop</a>
                         <ul class="dropdown-menu">
-                            <li><a href="shop.html">Sidebar Shop</a></li>
-                            <li><a href="shop-detail.html">Shop Detail</a></li>
+                            <li><a href="shop-detail.html">My Order</a></li>
                             <li><a href="cart.html">Cart</a></li>
                             <li><a href="checkout.html">Checkout</a></li>
                             <li><a href="my-account.html">My Account</a></li>
-                            <li><a href="wishlist.html">Wishlist</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

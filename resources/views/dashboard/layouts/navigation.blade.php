@@ -28,8 +28,56 @@
                     </p>
                 </a>
             </li>
-
             <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-file"></i>
+                    <p>
+                        Category
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-file"></i>
+                    <p>
+                        Sub-Category
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-gift"></i>
+                    <p>
+                        Product
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-lock"></i>
+                    <p>
+                        Order
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-percentage"></i>
+                    <p>
+                        Discount
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-list"></i>
+                    <p>
+                        Pages
+                    </p>
+                </a>
+            </li>
+
+            {{-- <li class="nav-item">
                 <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-circle nav-icon"></i>
                     <p>
@@ -45,7 +93,7 @@
                         </a>
                     </li>
                 </ul>
-            </li>
+            </li> --}}
         </ul>
     </nav>
     <!-- /.sidebar-menu -->
