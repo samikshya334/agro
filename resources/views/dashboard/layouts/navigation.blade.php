@@ -1,4 +1,5 @@
-<!-- Sidebar -->
+
+@if (Auth::user()->role==1)<!-- Sidebar -->
 <div class="sidebar">
     <!-- Sidebar user panel (optional) -->
     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
@@ -29,44 +30,48 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-file"></i>
+                <a  class="nav-link">
+                    <i class="nav-icon fas fa-circle nav-icon"></i>
                     <p>
                         Category
+                        <i class="fas fa-angle-left right"></i>
                     </p>
                 </a>
+                <ul class="nav nav-treeview" style="display: none;">
+                    <li class="nav-item">
+                        <a href="{{route('category.list')}}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>List</p>
+                        </a>
+                        <a href="{{route('category.create')}}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Create</p>
+                        </a>
+
+                    </li>
+                </ul>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-file"></i>
-                    <p>
-                        Sub-Category
-                    </p>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-gift"></i>
+                <a  class="nav-link">
+                    <i class="nav-icon fas fa-circle nav-icon"></i>
                     <p>
                         Product
+                        <i class="fas fa-angle-left right"></i>
                     </p>
                 </a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-lock"></i>
-                    <p>
-                        Order
-                    </p>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-percentage"></i>
-                    <p>
-                        Discount
-                    </p>
-                </a>
+                <ul class="nav nav-treeview" style="display: none;">
+                    <li class="nav-item">
+                        <a href="{{route('product.list')}}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>List</p>
+                        </a>
+                        <a href="{{route('product.create')}}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Create</p>
+                        </a>
+
+                    </li>
+                </ul>
             </li>
             <li class="nav-item">
                 <a href="#" class="nav-link">
@@ -99,3 +104,13 @@
     <!-- /.sidebar-menu -->
 </div>
 <!-- /.sidebar -->
+@else
+    <!-- Code for non-admin roles, e.g., role 0 -->
+    <!-- Redirect the user to the index page or any other appropriate page -->
+    <script>window.location = "{{ route('cart') }}";</script>
+@endif
+{{-- @else
+    <!-- Redirect to index page -->
+    {{ redirect()->route('cart') }}
+@endif --}}
+

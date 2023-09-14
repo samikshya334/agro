@@ -11,7 +11,6 @@
                         <ul>
                             <li class="nav-item"><a class="nav-link" href="about.html">Contact Us</a></li>
                             <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-                            <li class="nav-item"><a class="nav-link" href="about.html">Blogs</a></li>
 
 
                             <li>
@@ -19,13 +18,21 @@
                                     @if (Route::has('login'))
                                         <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right">
                                             @auth
-                                                <a href="{{ url('/home') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"><i class="fas fa-user mr-2"></i>My Account</a>
+                                            <a href="{{ url('logout') }}"
+                                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                                                    class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
+                                                    <i class="fas fa-sign-out-alt mr-2"></i>Logout
+                                                </a>
+                                                <form id="logout-form" action="{{ url('logout') }}" method="POST" style="display: none;">
+                                                    @csrf
+                                                </form>
+                                                {{-- <a href="{{ url('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"><i class="fas fa-user mr-2"></i>My Account</a> --}}
                                             @else
                                                 <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"><i class="fas fa-lock mr-2"></i>Log in</a>
 
-                                                {{-- @if (Route::has('register'))
+                                                @if (Route::has('register'))
                                                     <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
-                                                @endif --}}
+                                                @endif
                                             @endauth
                                         </div>
                                     @endif
@@ -51,27 +58,23 @@
                 <i class="fa fa-bars"></i>
             </button>
                 <a class="navbar-brand" href="{{route('index')}}">
-                    <img src="images/main-logo.png" class="logo" style="height:80px; width:auto;">
-                    <span style="color: #44803F; font-weight:bold">AGRO</span>
+                    <img src="images/logo.png" class="logo"  style="height:100px; width:auto;">
                 </a>
             </div>
             <!-- End Header Navigation -->
-
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-menu">
                 <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                    <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item active"><a class="nav-link" href="index.html">Seed</a></li>
-                    <li class="nav-item active"><a class="nav-link" href="index.html">Fertilizer</a></li>
-                    <li class="nav-item active"><a class="nav-link" href="index.html">Pesticide Product</a></li>
-                    <li class="nav-item active"><a class="nav-link" href="index.html">Kitchen Garden</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="{{route('index')}}">Home</a></li>
+                    {{-- <li class="nav-item active"><a class="nav-link" href="">Blogs</a></li> --}}
+                    {{-- <li class="nav-item active"><a class="nav-link" href="index.html">Vegetables </a></li> --}}
                     <li class="dropdown">
                         <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown"> Shop</a>
                         <ul class="dropdown-menu">
-                            <li><a href="shop-detail.html">My Order</a></li>
-                            <li><a href="cart.html">Cart</a></li>
-                            <li><a href="checkout.html">Checkout</a></li>
-                            <li><a href="my-account.html">My Account</a></li>
+                            {{-- <li><a href="shop-detail.html">My Order</a></li> --}}
+                            <li><a href="{{route('cart')}}">Cart</a></li>
+                            <li><a href="{{route('login')}}">Checkout</a></li>
+
                         </ul>
                     </li>
 
@@ -85,7 +88,7 @@
                 <ul>
                     <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
                     <li class="side-menu">
-                        <a href="#">
+                        <a href="{{route('cart')}}">
                             <i class="fa fa-shopping-bag"></i>
                             <span class="badge">3</span>
                             <p>My Cart</p>
@@ -96,7 +99,7 @@
             <!-- End Atribute Navigation -->
         </div>
         <!-- Start Side Menu -->
-        <div class="side">
+        {{-- <div class="side">
             <a href="#" class="close-side"><i class="fa fa-times"></i></a>
             <li class="cart-box">
                 <ul class="cart-list">
@@ -121,21 +124,8 @@
                     </li>
                 </ul>
             </li>
-        </div>
+        </div> --}}
         <!-- End Side Menu -->
     </nav>
     <!-- End Navigation -->
 </header>
-<!-- End Main Top -->
-
-<!-- Start Top Search -->
-<div class="top-search">
-    <div class="container">
-        <div class="input-group">
-            <span class="input-group-addon"><i class="fa fa-search"></i></span>
-            <input type="text" class="form-control" placeholder="Search">
-            <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
-        </div>
-    </div>
-</div>
-<!-- End Top Search -->

@@ -35,8 +35,9 @@
                 @enderror
             </div>
 
+
             <div class="row">
-                <div class="col-8">
+                 <div class="col-8">
                     <div class="icheck-primary">
                         <input type="checkbox" id="remember" name="remember">
                         <label for="remember">
@@ -45,18 +46,43 @@
                     </div>
                 </div>
                 <!-- /.col -->
-                <div class="col-4">
+                <div class="col-6">
+                    <div class="col-12 text-center">
                     <button type="submit" class="btn btn-primary btn-block">{{ __('Login') }}</button>
+                    </div>
                 </div>
+                <br> <br>
                 <!-- /.col -->
+                <div class="col-6">
+                    <button type="submit" class="btn btn-primary btn-block pull-right"><a  style="color: #fff; text-decoration:none; "href="{{route('register')}}"
+                        > Register</a></button>
+
+                </div>
+                {{-- <div class="col-8">
+                    <div class="icheck-primary">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">
+                            {{ __('Remember Me') }}
+                        </label>
+                    </div>
+                </div> --}}
             </div>
-        </form>
+            {{-- <div class="col-4">
+                <button type="submit" class="btn btn-primary btn-block"><a  style="color: #fff; text-decoration:none;"href="{{route('register')}}"
+                    > Register</a></button>
+
+            </div>
+            <!-- /.col --> --}}
+        </div>
 
         @if (Route::has('password.request'))
-            <p class="mb-1">
-                <a href="{{ route('password.request') }}">{{ __('Forgot Your Password?') }}</a>
-            </p>
-        @endif
+        <p class="mb-1">
+            <a href="{{ route('password.request') }}">{{ __('Forgot Your Password?') }}</a>
+        </p>
+    @endif
+    </form>
+
+
     </div>
     <!-- /.login-card-body -->
 @endsection
